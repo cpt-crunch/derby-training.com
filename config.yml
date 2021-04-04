@@ -1,0 +1,41 @@
+title: Derby-Training
+paginate: 5
+theme: hugo-PaperMod
+params:
+  description: 'A simple site to share roller derby exercices with the community'
+  ShowReadingTime: true
+  defaultTheme: auto
+  ShowShareButtons: true
+  profileMode:
+    enabled: false
+    title: derby-training
+    imageUrb: '#'
+    imageTitle: my image
+    buttons:
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "Bonjour  \U0001F44B"
+    Content: Bienvenue sur le site, j'espere que vous trouverez des exercices à votre gout !
+
+menu:
+  main:
+    - name: Tags
+      url: /tags/
+      weight: 1 
+    - name: Generator
+      url: /generator/
+    - name: Lexique
+      url: /lexique
+    - name: Proposer
+      url: /proposer
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+ShowToc: false
