@@ -11,6 +11,7 @@ content file contain markdown files that will be process by Hugo then convert in
 
 Theme PaperMod is used on this project
 
+Use this command to push in prod (apache server)
 ```
 hugo && cp -r public/* /var/www/html && rm -rf public/
 ```
