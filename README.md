@@ -1,2 +1,16 @@
 # Markdown-Derby-Training
-Markdown &amp; Hugo source for derby website
+
+## Context
+This repo contain source file for website derby-training.com
+
+## Installation
+To convert the file you must install HUGO, install_hugo.sh should help you to install HUGO 
+
+## How to use 
+content file contain markdown files that will be process by Hugo then convert in a static website on a public folder
+
+Theme PaperMod is used on this project
+
+```
+hugo && cp -r public/* /var/www/html && rm -rf public/
+```
