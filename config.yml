@@ -39,3 +39,13 @@ taxonomies:
   series: series
 
 ShowToc: false
+
+mediaTypes:
+  application/x-php:
+    suffixes:
+      - php
+outputFormats:
+  PHP:
+    mediaType: application/x-php
+    isPlainText: true
+    baseName: index

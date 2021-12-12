@@ -7,3 +7,4 @@ wget -O /etc/hugo/bin.tar.gz  https://github.com/gohugoio/hugo/releases/download
 tar -zxf /etc/hugo/bin.tar.gz -C /etc/hugo
 mv /etc/hugo/hugo /usr/bin 
 rm -r -f /etc/hugo
+export PATH=/bin:/usr/bin:/sbin:/usr/sbin
