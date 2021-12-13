@@ -10,13 +10,11 @@ comments: true
 ---
 
 # Generateur d'entrainement
-<!DOCTYPE HTML>
-<html>
-<body>
+Cette page est en cours developpement, merci pour votre bienvaillance
 
+{{< rawhtml >}}
 <iframe id="exercice1" src=""></iframe>
 <iframe id="exercice2" src=""></iframe>
-
 <iframe id="exercice3" src=""></iframe>
 <iframe id="exercice4" src=""></iframe>
 
@@ -38,5 +36,6 @@ function myFunction() {
 }
 </script>
 
-</body>
-</html>
+{{< rawhtml >}}
+
+
