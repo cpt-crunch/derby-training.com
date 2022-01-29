@@ -9,7 +9,7 @@ params:
   profileMode:
     enabled: false
     title: derby-training
-    imageUrb: '#'
+    imageUrb: 'derby-training.com'
     imageTitle: my image
     buttons:
       - name: Archives
@@ -19,7 +19,7 @@ params:
 
   homeInfoParams:
     Title: "Bonjour  \U0001F44B"
-    Content: Bienvenue sur le site, j'espere que vous trouverez des exercices à votre gout !
+    Content: Fan de roller derby ? Envie de t'entrainer ? Tu-es sur le bon site, j'espère que tu trouveras des exercices à ton gout !
 
 menu:
   main:
@@ -30,6 +30,8 @@ menu:
       url: /generator/
     - name: Lexique
       url: /lexique
+    - name: Regles
+      url: /regles
     - name: Proposer
       url: /proposer
 
