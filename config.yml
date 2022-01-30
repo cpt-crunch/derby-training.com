@@ -34,7 +34,8 @@ menu:
       url: /regles
     - name: Proposer
       url: /proposer
-
+    - name: Jamboard 
+      url: /jamboard
 taxonomies:
   category: categories
   tag: tags
@@ -51,3 +52,7 @@ outputFormats:
     mediaType: application/x-php
     isPlainText: true
     baseName: index
+ 
+ShowShareButtons: true
+
+enableEmoji: true

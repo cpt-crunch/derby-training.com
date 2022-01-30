@@ -9,10 +9,16 @@ cover:
 comments: true
 ---
 
-# Lexique
 
-:fr:
-:de:
-:it:
+# Regles  :book:
+Vous trouverez ci-dessous différentes régles de roller derby
 
-# Disclaimer
+### Régles wftda officielles 
+[:2018-wftda-FR:](/pdf/wftda-rules-french-2018.pdf)
+
+[:2020-wftda-FR:](/pdf/wftda-rules-french-2020.pdf)
+
+### Variante tournoi à 7 
+[:2016-Seven-ENG:](/pdf/seven-rules-english-16.pdf)
+
+[:2021-Seven-a-la-plage-FR:](/pdf/seven-a-la-plage-rules-french-21.pdf)
