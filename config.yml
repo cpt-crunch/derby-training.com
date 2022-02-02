@@ -1,6 +1,7 @@
 title: Derby-Training
 paginate: 5
 theme: hugo-PaperMod
+baseURL: https://www.derby-training.com
 params:
   description: 'A simple site to share roller derby exercices with the community'
   ShowReadingTime: true
@@ -19,7 +20,7 @@ params:
 
   homeInfoParams:
     Title: "Bonjour  \U0001F44B"
-    Content: Fan de roller derby ? Envie de t'entrainer ? Tu-es sur le bon site, j'espère que tu trouveras des exercices à ton gout !
+    Content: Fan de roller derby ? Envie de t'entrainer ? Tu es sur le bon site, j'espère que tu trouveras des exercices à ton gout !
 
 menu:
   main:
@@ -34,8 +35,8 @@ menu:
       url: /regles
     - name: Proposer
       url: /proposer
-    - name: Jamboard 
-      url: /jamboard
+    - name: Jamboard
+      url: /jamboard.html
 taxonomies:
   category: categories
   tag: tags
@@ -43,15 +44,15 @@ taxonomies:
 
 ShowToc: false
 
-mediaTypes:
-  application/x-php:
-    suffixes:
-      - php
-outputFormats:
-  PHP:
-    mediaType: application/x-php
-    isPlainText: true
-    baseName: index
+  #mediaTypes:
+  #  application/x-php:
+  #    suffixes:
+  #      - php
+  #outputFormats:
+  #  PHP:
+  #    mediaType: application/x-php
+  #    isPlainText: true
+  #   baseName: index
  
 ShowShareButtons: true
 

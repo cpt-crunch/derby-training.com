@@ -10,30 +10,24 @@ comments: true
 ---
 
 # Generateur d'entrainement
-Cette page est en cours developpement, merci pour votre bienvaillance
+Voici 3 exercices sélectionnés aléatoirement
+
+Ces exercices ne te plaisent pas ? Rafraîchit la page !
 
 {{< rawhtml >}}
-<iframe id="exercice1" src=""></iframe>
-<iframe id="exercice2" src=""></iframe>
-<iframe id="exercice3" src=""></iframe>
-<iframe id="exercice4" src=""></iframe>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<button onclick="myFunction()">Generer un entrainement</button>
-
+<p class="broken"></p>
 
 <script>
-function myFunction() {
-  var exercices = ["https://cpt-crunch.github.io/exercices/quick_start/", "https://cpt-crunch.github.io/exercices/the_drill/", "https://cpt-crunch.github.io/exercices/tracking/"];
-  var randomItem = exercices[Math.floor(Math.random()*exercices.length)];
-
-  document.getElementById("exercice1").src = randomItem;
-  var randomItem = exercices[Math.floor(Math.random()*exercices.length)];
-  document.getElementById("exercice2").src = randomItem;
-  var randomItem = exercices[Math.floor(Math.random()*exercices.length)];
-  document.getElementById("exercice3").src = randomItem;
-  var randomItem = exercices[Math.floor(Math.random()*exercices.length)];
-  document.getElementById("exercice4").src = randomItem;
-}
+$.ajax({
+  method: "GET",
+  url: "../generate.php",
+  data: { text: $("p.unbroken").text() }
+})
+  .done(function( response ) {
+    $("p.broken").html(response);
+  });
 </script>
 
 {{< rawhtml >}}

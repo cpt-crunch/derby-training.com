@@ -15,3 +15,10 @@ Use this command to push in prod (apache server)
 ```
 hugo && cp -r public/* /var/www/html && rm -rf public/
 ```
+
+
+PHP need dom extension 
+
+```
+sudo apt-get install php-dom
+```
