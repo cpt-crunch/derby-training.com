@@ -38,5 +38,3 @@ comments: true
 ### Points d’attention 
 *   Le jammer doit être explosif, afin de forcer les blockers à la reformation
 *   Les blockers doivent communiqués afin d’être efficaces 
-
-![test](../quickstart.jpg)
