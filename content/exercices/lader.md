@@ -34,4 +34,4 @@ comments: true
 * Exercice trés intense pour le jammer qui enchaine quatre tours de difficultés croissante
 *   Les blockers doivent communiqués afin d’être efficaces 
 
-![lader_animated](images/lader.svg)
+![lader_animated](/images/lader.svg)

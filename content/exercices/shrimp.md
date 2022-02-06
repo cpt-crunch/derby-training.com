@@ -35,4 +35,4 @@ comments: true
 * Les blockers doivent communiqués afin d’être efficaces 
 * Ne pas hesiter a faire des transition lorsque le jammer échappe à la formation 
 
-![shrimp_animated](images/shrimp.svg)
+![shrimp_animated](/images/shrimp.svg)
