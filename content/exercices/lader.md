@@ -1,6 +1,6 @@
 ---
 title: "Lader"
-date: 2022-02-06T14:39:02+00:00
+date: 2022-01-06T14:39:02+00:00
 weight: 20
 tags : ['Contact', 'Explosivité', 'Cardio' , 'Blocage'] 
 author: "cpt-crunch"
