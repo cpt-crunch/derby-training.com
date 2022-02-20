@@ -17,7 +17,6 @@ cover:
 comments: true
 ---
 
-- Tags : Contact, Reformation, Explosivité 
 - Prérequis : 3 Mètres de track 
 - Level : 3/5
 - Blocker : Travailler le contact et la reformation 
