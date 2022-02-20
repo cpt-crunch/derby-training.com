@@ -1,5 +1,5 @@
 ---
-title: "Juke Nukem Forever.md"
+title: "Juke Nukem Forever"
 date: 2022-02-20T11:30:18+00:00
 weight: 20
 tags : ['Technique', 'Explosivité', 'Esquive', 'parcour' ] 
