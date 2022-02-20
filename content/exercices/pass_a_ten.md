@@ -1,5 +1,5 @@
 ---
-title: "Whip me"
+title: "Pass a ten"
 date: 2022-02-20T11:30:18+00:00
 weight: 20
 tags : ['Technique', 'Mouvements', 'Ludique'] 
