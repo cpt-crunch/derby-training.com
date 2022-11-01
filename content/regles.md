@@ -22,3 +22,6 @@ Vous trouverez ci-dessous différentes régles de roller derby
 [:2016-Seven-ENG:](/pdf/seven-rules-english-16.pdf)
 
 [:2021-Seven-a-la-plage-FR:](/pdf/seven-a-la-plage-rules-french-21.pdf)
+
+# Livret evaluation Minimum skills
+[:Purple2.0-MS:](/pdf/doc-ms-purple-2.0.pdf)
