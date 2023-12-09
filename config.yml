@@ -19,16 +19,15 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Bonjour  \U0001F44B"
+    Title: "Bonjour  \U0001F44B 🛼"
     Content: Fan de roller derby ? Envie de t'entrainer ? Tu es sur le bon site, j'espère que tu trouveras des exercices à ton gout !
+      Tu trouveras également un outil permettant de visualiser un track en direct. Va voir la section Jamboard. J'ai égallement créer un petit lexique histoire de m'y retrouver dans le langage technique du roller derby.
 
 menu:
   main:
     - name: Tags
       url: /tags/
       weight: 1 
-    - name: Generator
-      url: /generator/
     - name: Lexique
       url: /lexique
     - name: Regles
