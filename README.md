@@ -11,6 +11,8 @@ content file contain markdown files that will be process by Hugo then convert in
 
 Theme PaperMod is used on this project
 
+Exercise pages live in `content/exercices/`. Hugo builds the `/exercices/` catalogue and its tag filters from those pages; add a Markdown file there to publish a new exercise. The `/entrainement/` page lets you compose, time, reorder, print, and randomly generate a workout. Sessions are saved in the browser. Add `duration: 15` to an exercise's front matter to set its suggested duration in minutes; otherwise the builder uses 10 minutes.
+
 Use this command to push in prod (apache server)
 ```
 hugo && cp -r public/* /var/www/html && rm -rf public/

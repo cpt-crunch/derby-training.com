@@ -37,4 +37,4 @@ comments: true
 
 ### Points d’attention 
 * En tant qu'assist ne pas hésiter à éclater le pack un maximum 
-* Ne pas hesiter à passer dans la phase de freeze lorsque le pack est suffisant eclaté	
+* Ne pas hesiter à passer dans la phase de freeze lorsque le pack est suffisant eclaté

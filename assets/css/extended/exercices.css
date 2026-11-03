@@ -1,0 +1,251 @@
+.exercises-page {
+  --exercise-accent: #b3392e;
+}
+
+.exercises-header {
+  margin: 0 0 2rem;
+}
+
+.exercises-eyebrow {
+  margin: 0 0 0.4rem;
+  color: var(--exercise-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exercises-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.exercises-description {
+  margin: 0.75rem 0 0;
+  color: var(--secondary);
+  font-size: 1.08rem;
+}
+
+.exercise-builder-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius);
+  background: var(--exercise-accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.exercise-builder-link:hover {
+  opacity: 0.9;
+}
+
+.exercises-tools {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.exercises-search-label {
+  font-weight: 700;
+}
+
+.exercises-search {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+  color: var(--primary);
+  font: inherit;
+}
+
+.exercises-search:focus-visible,
+.exercise-filter:focus-visible,
+.exercise-card-main:focus-visible,
+.exercise-add-button:focus-visible,
+.exercise-builder-link:focus-visible {
+  outline: 3px solid var(--exercise-accent);
+  outline-offset: 3px;
+}
+
+.exercises-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exercise-filter {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--entry);
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.exercise-filter:hover,
+.exercise-filter.is-active {
+  border-color: var(--exercise-accent);
+  background: var(--exercise-accent);
+  color: #fff;
+}
+
+.exercises-results {
+  margin: 1rem 0;
+  color: var(--secondary);
+  font-size: 0.92rem;
+}
+
+.exercises-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+}
+
+.exercise-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.exercise-card:hover {
+  border-color: var(--exercise-accent);
+}
+
+.exercise-card[hidden],
+.exercise-card-main[hidden] {
+  display: none;
+}
+
+.exercise-card-main {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  color: inherit;
+  text-decoration: none;
+}
+
+.exercise-card-main:hover .exercise-card-heading h2 {
+  color: var(--exercise-accent);
+}
+
+.exercise-card-heading {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.exercise-card-heading h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.exercise-card-arrow {
+  flex: 0 0 auto;
+  color: var(--exercise-accent);
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.exercise-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0.65rem 0 0;
+  color: var(--secondary);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.exercise-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.exercise-card-tags li {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--tertiary);
+  color: var(--primary);
+  font-size: 0.78rem;
+}
+
+.exercise-card-link-label {
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--exercise-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.exercise-add-button {
+  min-height: 2.5rem;
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--exercise-accent);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--exercise-accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.exercise-add-button:hover {
+  background: var(--exercise-accent);
+  color: #fff;
+}
+
+.exercise-add-button.is-added {
+  border-color: var(--border);
+  color: var(--secondary);
+}
+
+.exercise-add-button.is-added:hover {
+  border-color: var(--exercise-accent);
+  color: #fff;
+}
+
+.exercises-add-status {
+  min-height: 1.4em;
+  color: var(--secondary);
+}
+
+.exercises-empty {
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--secondary);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exercise-card,
+  .exercise-builder-link {
+    transition: none;
+  }
+}

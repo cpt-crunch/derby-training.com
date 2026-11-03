@@ -1,0 +1,86 @@
+{{- define "main" }}
+{{- $pages := .RegularPages.ByTitle }}
+{{- $allTags := slice }}
+{{- range $pages }}
+  {{- range .Params.tags }}
+    {{- $allTags = $allTags | append . }}
+  {{- end }}
+{{- end }}
+
+<section class="exercises-page" aria-labelledby="exercises-title">
+  <header class="exercises-header">
+    <p class="exercises-eyebrow">Bibliothèque d'entrainement</p>
+    <h1 id="exercises-title">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="exercises-description">{{ . }}</p>
+    {{- end }}
+    <a class="exercise-builder-link" href="{{ "/entrainement/" | relURL }}">Créer mon entraînement</a>
+  </header>
+
+  <div class="exercises-tools">
+    <label class="exercises-search-label" for="exercise-search">Rechercher un exercice</label>
+    <input
+      class="exercises-search"
+      id="exercise-search"
+      type="search"
+      placeholder="Ex. : agilité, contact, reformation…"
+      autocomplete="off"
+      aria-controls="exercise-list"
+    >
+
+    {{- with (uniq $allTags | sort) }}
+    <div class="exercises-filters" role="group" aria-label="Filtrer les exercices par thème">
+      <button class="exercise-filter is-active" type="button" data-filter="" aria-pressed="true">Tous</button>
+      {{- range . }}
+      <button class="exercise-filter" type="button" data-filter="{{ . }}" aria-pressed="false">{{ . }}</button>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+
+  <p class="exercises-results" id="exercise-results" role="status" aria-live="polite">
+    {{ len $pages }} exercice{{ if ne (len $pages) 1 }}s{{ end }}
+  </p>
+  <p class="exercises-add-status" id="exercise-add-status" role="status" aria-live="polite"></p>
+
+  <div class="exercises-list" id="exercise-list">
+    {{- range $pages }}
+    {{- $summary := .Description | default .Summary | plainify | htmlUnescape }}
+    {{- $searchText := printf "%s %s %s %s" .Title .Description (delimit .Params.tags " ") .Plain | plainify }}
+    <article class="exercise-card" data-search="{{ $searchText }}" data-tags="{{ delimit .Params.tags "|" }}">
+      <a class="exercise-card-main" href="{{ .RelPermalink }}">
+        <div class="exercise-card-heading">
+          <h2>{{ .Title }}</h2>
+          <span class="exercise-card-arrow" aria-hidden="true">→</span>
+        </div>
+        {{- with $summary }}
+        <p class="exercise-card-summary">{{ . }}</p>
+        {{- end }}
+        {{- with .Params.tags }}
+        <ul class="exercise-card-tags" aria-label="Thèmes">
+          {{- range . }}
+          <li>{{ . }}</li>
+          {{- end }}
+        </ul>
+        {{- end }}
+        <span class="exercise-card-link-label">Voir l'exercice</span>
+      </a>
+      <button
+        class="exercise-add-button"
+        type="button"
+        data-title="{{ .Title }}"
+        data-url="{{ .RelPermalink }}"
+        data-summary="{{ $summary }}"
+        data-tags="{{ delimit .Params.tags "|" }}"
+        data-duration="{{ .Params.duration | default 10 }}"
+      >Ajouter à ma séance</button>
+    </article>
+    {{- end }}
+  </div>
+
+  <p class="exercises-empty" id="exercise-empty" hidden>Aucun exercice ne correspond à votre recherche.</p>
+</section>
+
+<script defer src="{{ "scripts/exercices.js" | relURL }}"></script>
+<script defer src="{{ "scripts/seance.js" | relURL }}"></script>
+{{- end }}

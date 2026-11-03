@@ -25,17 +25,21 @@ params:
 
 menu:
   main:
-    - name: Tags
-      url: /tags/
-      weight: 1 
+    - name: Exercices
+      url: /exercices/
+      weight: 1
+    - name: Créer mon entraînement
+      url: /entrainement/
+      weight: 2
     - name: Lexique
       url: /lexique
+      weight: 3
     - name: Regles
       url: /regles
-    - name: Proposer
-      url: /proposer
+      weight: 4
     - name: Jamboard
       url: /jamboard.html
+      weight: 5
 taxonomies:
   category: categories
   tag: tags

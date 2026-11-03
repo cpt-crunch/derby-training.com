@@ -1,0 +1,80 @@
+{{- define "main" }}
+{{- $exercises := where site.RegularPages "Section" "exercices" }}
+{{- $exercises = sort $exercises "Title" }}
+
+<section class="workout-page" aria-labelledby="workout-title">
+  <header class="workout-header">
+    <p class="exercises-eyebrow">Préparation de séance</p>
+    <h1 id="workout-title">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="exercises-description">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  <section class="workout-generator" aria-labelledby="generator-title">
+    <div>
+      <h2 id="generator-title">Générer une séance aléatoire</h2>
+      <p>Choisissez une durée : les exercices sont sélectionnés et le dernier ajusté pour respecter le temps demandé.</p>
+    </div>
+    <form class="workout-generator-form" id="workout-generator-form">
+      <label for="workout-target">Durée de la séance (minutes)</label>
+      <input id="workout-target" type="number" min="15" max="480" step="5" value="120" required>
+      <button class="workout-button workout-button-primary" type="submit" {{ if not $exercises }}disabled{{ end }}>Générer l'entraînement</button>
+    </form>
+  </section>
+
+  <section class="workout-picker" aria-labelledby="picker-title">
+    <h2 id="picker-title">Ajouter des exercices</h2>
+    <div class="workout-picker-controls">
+      <label class="workout-field" for="exercise-picker-search">
+        Rechercher
+        <input id="exercise-picker-search" type="search" placeholder="Nom, objectif ou thème">
+      </label>
+      <label class="workout-field" for="exercise-picker">
+        Exercice
+        <select id="exercise-picker" {{ if not $exercises }}disabled{{ end }}>
+          <option value="">Choisir un exercice…</option>
+          {{- range $exercises }}
+          {{- $summary := .Description | default .Summary | plainify | htmlUnescape }}
+          {{- $searchText := printf "%s %s %s %s" .Title .Description (delimit .Params.tags " ") .Plain | plainify }}
+          <option
+            value="{{ .RelPermalink }}"
+            data-title="{{ .Title }}"
+            data-url="{{ .RelPermalink }}"
+            data-summary="{{ $summary }}"
+            data-search="{{ $searchText }}"
+            data-tags="{{ delimit .Params.tags "|" }}"
+            data-duration="{{ .Params.duration | default 10 }}"
+          >{{ .Title }} ({{ .Params.duration | default 10 }} min estimées)</option>
+          {{- end }}
+        </select>
+      </label>
+      <button class="workout-button workout-button-primary" id="add-picked-exercise" type="button" {{ if not $exercises }}disabled{{ end }}>Ajouter à la séance</button>
+    </div>
+    <p class="workout-help">La durée proposée est de 10 minutes par exercice. Vous pouvez la modifier dans la séance.</p>
+  </section>
+
+  <section class="workout-session" aria-labelledby="session-title">
+    <div class="workout-session-heading">
+      <div>
+        <h2 id="session-title">Ma seance</h2>
+        <p id="workout-count" class="workout-help">0 exercice</p>
+      </div>
+      <div class="workout-total" aria-live="polite">
+        <span>Durée totale</span>
+        <strong id="workout-total">0 min</strong>
+      </div>
+    </div>
+
+    <p class="workout-status" id="workout-status" role="status" aria-live="polite"></p>
+    <ol class="workout-list" id="workout-list"></ol>
+    <p class="workout-empty" id="workout-empty">Votre séance est vide. Choisissez un exercice ou générez une séance aléatoire.</p>
+    <div class="workout-actions">
+      <button class="workout-button" id="clear-workout" type="button" disabled>Vider la séance</button>
+      <button class="workout-button" id="print-workout" type="button" disabled>Imprimer la séance</button>
+    </div>
+  </section>
+</section>
+
+<script defer src="{{ "scripts/seance.js" | relURL }}"></script>
+{{- end }}

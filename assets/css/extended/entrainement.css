@@ -1,0 +1,279 @@
+.workout-page {
+  --exercise-accent: #b3392e;
+}
+
+.workout-header,
+.workout-picker,
+.workout-session,
+.workout-generator {
+  margin-bottom: 1.5rem;
+}
+
+.workout-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.workout-header .exercises-description {
+  margin-top: 0.75rem;
+}
+
+.workout-generator,
+.workout-picker,
+.workout-session {
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+}
+
+.workout-generator {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  align-items: center;
+  gap: 1.25rem;
+  border-color: color-mix(in srgb, var(--exercise-accent) 45%, var(--border));
+}
+
+.workout-generator h2,
+.workout-picker h2,
+.workout-session h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.workout-generator p,
+.workout-help {
+  margin: 0.5rem 0 0;
+  color: var(--secondary);
+}
+
+.workout-generator-form,
+.workout-picker-controls,
+.workout-field {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.workout-generator-form label,
+.workout-field {
+  font-weight: 700;
+}
+
+.workout-picker-controls {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  align-items: end;
+  margin-top: 1rem;
+}
+
+.workout-generator-form input,
+.workout-field input,
+.workout-field select,
+.workout-item-duration {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--theme);
+  color: var(--primary);
+  font: inherit;
+}
+
+.workout-button {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--theme);
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.workout-button:hover:not(:disabled) {
+  border-color: var(--exercise-accent);
+}
+
+.workout-button:disabled,
+.workout-item-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.workout-button-primary {
+  border-color: var(--exercise-accent);
+  background: var(--exercise-accent);
+  color: #fff;
+}
+
+.workout-session-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.workout-total {
+  display: grid;
+  gap: 0.1rem;
+  color: var(--secondary);
+  text-align: right;
+}
+
+.workout-total strong {
+  color: var(--exercise-accent);
+  font-size: 1.6rem;
+}
+
+.workout-status {
+  min-height: 1.4em;
+  margin: 0.8rem 0 0;
+  color: var(--secondary);
+}
+
+.workout-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding-left: 2.2rem;
+}
+
+.workout-item {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--theme);
+}
+
+.workout-item-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.75rem;
+}
+
+.workout-item-title {
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.workout-item-title:hover {
+  color: var(--exercise-accent);
+}
+
+.workout-item-summary,
+.workout-item-tags {
+  margin: 0.5rem 0 0;
+  color: var(--secondary);
+}
+
+.workout-item-tags {
+  font-size: 0.85rem;
+}
+
+.workout-item-duration-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.workout-item-duration {
+  width: 5.5rem;
+}
+
+.workout-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.workout-item-button {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+}
+
+.workout-item-button:hover:not(:disabled) {
+  border-color: var(--exercise-accent);
+}
+
+.workout-empty {
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--secondary);
+  text-align: center;
+}
+
+.workout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.workout-page :focus-visible {
+  outline: 3px solid var(--exercise-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .workout-item-content {
+    grid-template-columns: 1fr;
+  }
+
+  .workout-total {
+    text-align: left;
+  }
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  body > header,
+  body > footer,
+  .workout-generator,
+  .workout-picker,
+  .workout-actions,
+  .workout-item-actions,
+  .workout-status {
+    display: none !important;
+  }
+
+  .workout-session,
+  .workout-item {
+    break-inside: avoid;
+    border-color: #aaa;
+    background: #fff;
+    color: #111;
+  }
+
+  .workout-item-title,
+  .workout-total strong {
+    color: #111;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
