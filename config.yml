@@ -2,6 +2,8 @@ title: Derby-Training
 paginate: 5
 theme: hugo-PaperMod
 baseURL: https://www.derby-training.com
+ignoreFiles:
+  - '\.php$'
 params:
   description: 'A simple site to share roller derby exercices with the community'
   ShowReadingTime: true

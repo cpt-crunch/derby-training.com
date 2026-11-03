@@ -1,26 +1,31 @@
-# Markdown-Derby-Training
+# Derby Training
 
-## Context
-This repo contain source file for website derby-training.com
+Site statique généré avec Hugo et le thème PaperMod. À chaque push sur `main`, GitHub Actions construit le site et le publie sur GitHub Pages.
 
-## Installation
-To convert the file you must install HUGO, install_hugo.sh should help you to install HUGO 
+## Activer GitHub Pages
 
-## How to use 
-content file contain markdown files that will be process by Hugo then convert in a static website on a public folder
+1. Dans le dépôt GitHub, ouvrez **Settings → Pages**.
+2. Dans **Build and deployment**, choisissez **GitHub Actions** comme source.
+3. Envoyez les changements sur la branche `main` ou lancez manuellement l'action **Deploy Hugo site to GitHub Pages** dans l'onglet **Actions**.
+4. Dans **Settings → Pages → Custom domain**, vérifiez `www.derby-training.com` et activez **Enforce HTTPS** une fois que GitHub a terminé la vérification DNS.
+5. Dans la gestion DNS du domaine, ajoutez un enregistrement **CNAME** pour `www` pointant vers `cpt-crunch.github.io`. Le fichier `static/CNAME` est publié automatiquement avec le site. Si vous voulez aussi que le domaine nu `derby-training.com` fonctionne, configurez une redirection vers `www.derby-training.com` chez votre fournisseur DNS.
 
-Theme PaperMod is used on this project
+Le site est servi en HTTPS sur [www.derby-training.com](https://www.derby-training.com). Si vous choisissez une autre adresse, modifiez `baseURL` dans `config.yml` ainsi que `static/CNAME`.
 
-Exercise pages live in `content/exercices/`. Hugo builds the `/exercices/` catalogue and its tag filters from those pages; add a Markdown file there to publish a new exercise. The `/entrainement/` page lets you compose, time, reorder, print, and randomly generate a workout. Sessions are saved in the browser. Add `duration: 15` to an exercise's front matter to set its suggested duration in minutes; otherwise the builder uses 10 minutes.
+## Contenu
 
-Use this command to push in prod (apache server)
+Les exercices sont des fichiers Markdown dans `content/exercices/`. Hugo génère automatiquement le catalogue `/exercices/`, ses filtres par tags et les fiches individuelles. Pour publier un exercice, ajoutez un fichier Markdown dans ce dossier.
+
+La page `/entrainement/` permet de composer, chronométrer, réordonner, imprimer et générer aléatoirement une séance. Les séances sont enregistrées dans le navigateur. Ajoutez `duration: 15` au front matter d'un exercice pour définir sa durée suggérée en minutes ; la valeur par défaut est 10 minutes.
+
+Les fichiers PHP historiques restent dans le dépôt. Hugo les exclut de la génération et l'action de déploiement retire également les anciennes sorties PHP du dossier `public/` avant publication. Aucun code PHP n'est donc publié ou exécuté par GitHub Pages.
+
+## Construire en local
+
+Installez Hugo Extended 0.90.1, puis lancez :
+
+```sh
+hugo --minify
 ```
-hugo && cp -r public/* /var/www/html && rm -rf public/
-```
 
-
-PHP need dom extension 
-
-```
-sudo apt-get install php-dom
-```
+Le site généré se trouve dans `public/`.
