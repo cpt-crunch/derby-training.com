@@ -11,6 +11,15 @@
 
   const createId = () => `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
+  const isInternalUrl = (value) => {
+    try {
+      const url = new URL(value, window.location.origin);
+      return url.origin === window.location.origin && url.pathname.startsWith("/");
+    } catch (error) {
+      return false;
+    }
+  };
+
   const readWorkout = () => {
     let stored;
     try {
@@ -31,8 +40,7 @@
         typeof item.id === "string" &&
         typeof item.title === "string" &&
         typeof item.url === "string" &&
-        item.url.startsWith("/") &&
-        !item.url.startsWith("//") &&
+        isInternalUrl(item.url) &&
         Number.isInteger(item.duration) &&
         item.duration >= 1 &&
         item.duration <= 480 &&
@@ -199,7 +207,7 @@
   });
 
   const addExercise = (exercise) => {
-    if (!exercise.title || !exercise.url || !Number.isInteger(exercise.duration) || exercise.duration < 1) {
+    if (!exercise.title || !isInternalUrl(exercise.url) || !Number.isInteger(exercise.duration) || exercise.duration < 1) {
       announce("Cet exercice ne peut pas etre ajoute : ses informations sont incompletes.");
       return false;
     }

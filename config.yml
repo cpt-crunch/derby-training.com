@@ -1,7 +1,8 @@
 title: Derby-Training
 paginate: 5
 theme: hugo-PaperMod
-baseURL: https://www.derby-training.com
+baseURL: https://cpt-crunch.github.io/derby-training.com/
+canonifyURLs: true
 ignoreFiles:
   - '\.php$'
 params:
@@ -9,6 +10,12 @@ params:
   ShowReadingTime: true
   defaultTheme: auto
   ShowShareButtons: true
+  assets:
+    favicon: "favicon.svg"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+    safari_pinned_tab: "favicon.svg"
   profileMode:
     enabled: false
     title: derby-training
@@ -28,19 +35,19 @@ params:
 menu:
   main:
     - name: Exercices
-      url: /exercices/
+      url: exercices/
       weight: 1
     - name: Créer mon entraînement
-      url: /entrainement/
+      url: entrainement/
       weight: 2
     - name: Lexique
-      url: /lexique
+      url: lexique/
       weight: 3
     - name: Regles
-      url: /regles
+      url: regles/
       weight: 4
     - name: Jamboard
-      url: /jamboard.html
+      url: jamboard.html
       weight: 5
 taxonomies:
   category: categories

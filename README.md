@@ -7,10 +7,10 @@ Site statique généré avec Hugo et le thème PaperMod. À chaque push sur `mai
 1. Dans le dépôt GitHub, ouvrez **Settings → Pages**.
 2. Dans **Build and deployment**, choisissez **GitHub Actions** comme source.
 3. Envoyez les changements sur la branche `main` ou lancez manuellement l'action **Deploy Hugo site to GitHub Pages** dans l'onglet **Actions**.
-4. Dans **Settings → Pages → Custom domain**, vérifiez `www.derby-training.com` et activez **Enforce HTTPS** une fois que GitHub a terminé la vérification DNS.
-5. Dans la gestion DNS du domaine, ajoutez un enregistrement **CNAME** pour `www` pointant vers `cpt-crunch.github.io`. Le fichier `static/CNAME` est publié automatiquement avec le site. Si vous voulez aussi que le domaine nu `derby-training.com` fonctionne, configurez une redirection vers `www.derby-training.com` chez votre fournisseur DNS.
+4. Si un ancien domaine personnalisé est configuré dans **Settings → Pages**, supprimez-le pour revenir à l'adresse GitHub Pages.
+5. Une fois le déploiement terminé, le site sera disponible sur [https://cpt-crunch.github.io/derby-training.com/](https://cpt-crunch.github.io/derby-training.com/).
 
-Le site est servi en HTTPS sur [www.derby-training.com](https://www.derby-training.com). Si vous choisissez une autre adresse, modifiez `baseURL` dans `config.yml` ainsi que `static/CNAME`.
+L'adresse publique est configurée dans `baseURL` de `config.yml`. Hugo génère les liens canoniques et les ressources avec ce préfixe de projet GitHub Pages.
 
 ## Contenu
 
